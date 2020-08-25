@@ -1,0 +1,39 @@
+<p>display works!</p>
+
+<div class='table-responsive'>
+My int is {{int}}
+
+{{Tempdatabase}}
+<table class='table'
+>
+      <thead>
+        <tr>
+            <th>ID</th>
+          <th>Name</th>
+          <th>Adress</th>
+          <th>PhoneNumber</th>
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= 
+        'let data of database'  >
+
+    <td>
+     {{data.databaseId}}
+    </td>       
+    <td>
+        {{data.CustomerName}}
+     </td>
+     <td>
+        {{data.Adress}}
+     </td>
+     <td>
+        {{data.phoneNumber}}
+     </td>
+     </tr>
+      </tbody>
+    </table>
+</div>
+
+

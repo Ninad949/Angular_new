@@ -1,0 +1,39 @@
+<p>database works!</p>
+
+<p>database works!</p>
+
+<div>
+    <h3 class="first">Name</h3>
+    <input type="text" size="30"  (keyup)=getVal($event) />
+    
+    <h3>Phone Number</h3>
+    <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" pInputText  (keyup)=getVal2($event)> 
+        <label for="float-input"></label>
+    </span>
+    
+    <h3>Adress</h3>
+    <input id="input" type="text" size="30"  (keyup)=getVal3($event) />
+    <p></p>
+    <button *ngIf = 'string_name  &&  string_phone && string_address  ' (click)=" save_value()">save </button>
+    
+    <div *ngIf= 'num'>
+ 
+        
+        <h3 *ngIf = 'string_name  &&  string_phone && string_address  '>
+            New data is saved :  </h3>
+        <p>
+          Name : {{string_name}}
+        </p>
+        <p>
+          Phone Number: {{string_phone}}
+        </p>
+         <p>
+         Adress: {{string_address}}
+         </p>
+
+
+    </div>
+    
+    </div>
+© 2020 GitHub, Inc.

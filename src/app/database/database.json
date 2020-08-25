@@ -1,0 +1,22 @@
+[
+    {
+      "databaseId": 1,
+      "CustomerName": "Ninad",
+      "Adresss": "Sumukh apts",
+      "phoneNumber": "2344234"
+      
+    },
+    {
+      "databaseId": 2,
+      "CustomerName": "Neeraj",
+      "Adresss": "Sahakarnagar2",
+      "phoneNumber": "242344"
+    },
+    {
+      "databaseId": 3,
+      "CustomerName": "Darsheel",
+      "Adresss": "Chintamaninagar",
+      "phoneNumber": "234234"
+    }
+    
+  ]
