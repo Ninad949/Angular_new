@@ -20,9 +20,7 @@ const PRODUCTS = [
 })
 export class DisplayComponent implements OnInit {
 
-  private dabaseURL = '/src/app/database/database.json';
-
-  database :IDatabase | undefined ;
+  
   errorMessage: '';
   Filterdatabase: IDatabase[] = [];
 
@@ -53,13 +51,11 @@ export class DisplayComponent implements OnInit {
 
 
 
- database2 : IDatabase[];
+ database : IDatabase[] = [];
+ database2 : IDatabase[] = [];
   HttpClient: any;
 
   
-  
-
-
   constructor (private dbservice: DatabaseService,
             private route: ActivatedRoute,
               private router: Router, ) { }
@@ -69,32 +65,45 @@ export class DisplayComponent implements OnInit {
     
   }
 */
-  ngOnInit() {
+  ngOnInit() :void
+  {
+    this.dbservice.getProducts().subscribe({
+      next: database => {
+          this.database = database;
+        //  this.database2= this.database;
+       // this.filteredProducts = this.products;
+      },
+      error: err => this.errorMessage = err
+    });
+  }
 
-    const param = this.route.snapshot.paramMap.get('id');
+
+   /* const param = this.route.snapshot.paramMap.get('id');
     if (param) {
       const id = +param;
       this.dbservice.getProduct(id);
     }
-    
-}
+    */
 
-getProduct(id: number) {
+
+
+
+/*getProduct(id: number) {
   this.dbservice.getProduct(id).subscribe({
     next: database =>  this.database= database,
     error: err => this.errorMessage = err
 
    } );
-
-
  
  }
 
- 
+*/
   
+
 }
-    
 
 
 
   
+
+

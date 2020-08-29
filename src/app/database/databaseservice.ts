@@ -10,7 +10,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { IDatabase} from './database';
 
- const dabaseURL = '/src/app/database/database.json';
+ 
  import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 
@@ -25,11 +25,11 @@ import { catchError, tap, map } from 'rxjs/operators';
  export class DatabaseService {
  
 
-  private dabaseURL = '/src/app/database/database.json';
+  private databaseURL = '/api/products/database.json';
      constructor(private http: HttpClient) { }
 
      getProducts(): Observable<IDatabase[]> {
-      return this.http.get<IDatabase[]>(this.dabaseURL)
+      return this.http.get<IDatabase[]>(this.databaseURL)
         .pipe(
           tap(data => console.log('All: ' + JSON.stringify(data))),
           catchError(this.handleError)
@@ -42,7 +42,15 @@ import { catchError, tap, map } from 'rxjs/operators';
           map((database: IDatabase[]) => database.find(d => d.databaseID === id))
         );
     }
-  
+
+  /*  addProducts(id: number): Observable<IDatabase> {
+      .pipe(
+        p(data => console.log('All: ' + JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+
+    }
+*/
     private handleError(err: HttpErrorResponse) {
       // in a real world app, we may send the server to some remote logging infrastructure
       // instead of just logging it to the console

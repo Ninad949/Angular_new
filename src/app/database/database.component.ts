@@ -62,4 +62,9 @@ export class DatabaseComponent implements OnInit {
     this.disabled = !this.disabled;
 }
 
+add_data(){
+
+  
+}
+
 }
